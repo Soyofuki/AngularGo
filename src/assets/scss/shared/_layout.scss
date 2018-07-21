@@ -1,0 +1,18 @@
+.app__header {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  height: 64px;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0;
+  color: white;
+  background-color: $toolbar-bg;
+  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.app__spacer {
+  flex: 1 1 auto;
+}
