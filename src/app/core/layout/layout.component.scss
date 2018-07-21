@@ -1,4 +1,4 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 .example-container {
   display: flex;
   flex-direction: column;
@@ -45,4 +45,7 @@ body {
 
 .rounter-outlet {
   padding: 20px;
+}
+.example-spacer {
+  flex: 1 1 auto;
 }

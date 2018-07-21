@@ -4,8 +4,6 @@ import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExceptionLoggingService } from './logging/exception-logging.service';
-import { NavComponent } from './nav/nav.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AppInsightsMonitoringService } from './logging/app-insights-monitoring.service';
 import { TrackableComponent } from './logging/trackable.component';
@@ -18,8 +16,6 @@ import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatMe
 @NgModule({
   declarations: [
     LayoutComponent,
-    NavComponent,
-    ToolbarComponent,
     TrackableComponent,
     FooterComponent
   ],
@@ -31,7 +27,8 @@ import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatMe
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule
   ],
   exports: [
     LayoutComponent,
