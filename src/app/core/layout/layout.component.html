@@ -5,11 +5,11 @@
 <div class="mat-app-background basic-container" class="example-container" [class.example-is-mobile]="mobileQuery.matches">
 
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="0">
       <mat-toolbar color="primary" class="example-toolbar">
         <h1 class="example-app-name">Angular Go</h1>
       </mat-toolbar>
-      <mat-nav-list>
+      <mat-nav-list [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
         <ng-container *ngFor="let item of items">
           <a mat-list-item routerLink={{item.routerLink}}>{{item.name}}</a>
           <mat-list>
