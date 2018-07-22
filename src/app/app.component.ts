@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Constants } from './shared/models/constants';
 import { AppInsightsMonitoringService } from './core/logging/app-insights-monitoring.service';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
