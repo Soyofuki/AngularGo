@@ -1,11 +1,10 @@
-import { Component, ReflectiveInjector } from '@angular/core';
-import { AppInsightsMonitoringService } from './app-insights-monitoring.service';
+import { Component, ReflectiveInjector } from "@angular/core";
+import { AppInsightsMonitoringService } from "./app-insights-monitoring.service";
 
 @Component({
-  template: ''
+  template: ""
 })
 export class TrackableComponent {
-
   private appInsightsMonitoringService: AppInsightsMonitoringService;
 
   constructor() {
@@ -14,13 +13,13 @@ export class TrackableComponent {
     const injector = ReflectiveInjector.resolveAndCreate([
       AppInsightsMonitoringService
     ]);
-    this.appInsightsMonitoringService = injector.get(AppInsightsMonitoringService);
+    this.appInsightsMonitoringService = injector.get(
+      AppInsightsMonitoringService
+    );
     this.logNavigation();
   }
 
   private logNavigation() {
     this.appInsightsMonitoringService.logPageView();
   }
-
 }
-

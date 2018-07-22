@@ -1,5 +1,4 @@
 export class ApplicationError extends Error {
-
   httpStatus = 404;
   applicationStatus?: number;
   errorMessageTranslationKey: string;

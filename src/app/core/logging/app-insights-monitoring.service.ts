@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
-import { AppInsights } from 'applicationinsights-js';
+import { Injectable } from "@angular/core";
+import { environment } from "../../../environments/environment";
+import { AppInsights } from "applicationinsights-js";
 
 @Injectable()
 export class AppInsightsMonitoringService {
-
   private config: Microsoft.ApplicationInsights.IConfig = {
     instrumentationKey: environment.appInsights.instrumentationKey
   };
@@ -15,8 +14,13 @@ export class AppInsightsMonitoringService {
     }
   }
 
-  logPageView(name?: string, url?: string, properties?: any,
-      measurements?: any, duration?: number) {
+  logPageView(
+    name?: string,
+    url?: string,
+    properties?: any,
+    measurements?: any,
+    duration?: number
+  ) {
     AppInsights.trackPageView(name, url, properties, measurements, duration);
   }
 
@@ -27,6 +31,4 @@ export class AppInsightsMonitoringService {
   logException(error: Error) {
     AppInsights.trackException(error);
   }
-
-
 }

@@ -19,17 +19,22 @@ export class LayoutComponent implements OnInit {
 
   items: NavItem[] = [
     {
-      name: "Home", routerLink: "home", subItems: null
+      name: "Home",
+      routerLink: "home",
+      subItems: null
     },
     {
-      name: "Sample", routerLink: "sample",
+      name: "Sample",
+      routerLink: "sample",
       subItems: [
         { name: "Sample1", routerLink: "sample1", subItems: null },
         { name: "Sample2", routerLink: "sample2", subItems: null }
       ]
     },
     {
-      name: "Help", routerLink: "help", subItems: null
+      name: "Help",
+      routerLink: "help",
+      subItems: null
     }
   ];
 
