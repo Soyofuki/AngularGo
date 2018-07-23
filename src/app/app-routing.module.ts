@@ -7,6 +7,7 @@ export const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "home", loadChildren: "./home/home.module#HomeModule" },
   { path: "sample", loadChildren: "./sample/sample.module#SampleModule" },
+  { path: "login", loadChildren: "./login/login.module#LoginModule" },
   { path: "help", component: HelpComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
