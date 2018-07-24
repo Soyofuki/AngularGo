@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { AccountService } from "../account.service";
 
 export class User {
   constructor(
     public email: string,
     public password: string,
-    public passwordConfirmation: string
+    public confirmPassword: string
   ) {  }
 }
 
@@ -15,13 +15,10 @@ export class User {
   styleUrls: ["./registration.component.scss"]
 })
 export class RegistrationComponent implements OnInit {
-  userId: string;
-  code: string;
-
 
   model = new User('', '', '');
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private accountService: AccountService) {}
 
   ngOnInit() {
 
@@ -29,6 +26,11 @@ export class RegistrationComponent implements OnInit {
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() {
+    if (this.model.password == this.model.confirmPassword) {
+      this.submitted = true;
+      this.accountService.register(this.model.email, this.model.password);
+    }
+  }
 
 }

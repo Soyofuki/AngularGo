@@ -1,38 +1,31 @@
 <div class="container">
-    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" class="form-control" id="email"
-               required
-               [(ngModel)]="model.email" name="email"
-               #email="ngModel">
-        <div [hidden]="email.valid || email.pristine"
-             class="alert alert-danger">
-             Email is required
-        </div>
-
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password"
-               required
-               [(ngModel)]="model.password" name="password"
-               #password="ngModel">
-        <div [hidden]="password.valid || password.pristine"
-             class="alert alert-danger">
-             Password is required
-        </div>
-
-        <label for="passwordConfirmation">Password Confirmation</label>
-        <input type="password" class="form-control" id="passwordConfirmation"
-               required
-               [(ngModel)]="model.passwordConfirmation" name="passwordConfirmation"
-               #passwordConfirmation="ngModel">
-        <div [hidden]="passwordConfirmation.valid || passwordConfirmation.pristine"
-             class="alert alert-danger">
-             Password Confirmation is required
-        </div>
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" required maxlength=256 [(ngModel)]="model.email" name="email" #email="ngModel" email>
+      <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+        Email is required
       </div>
 
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" required maxlength=256 [(ngModel)]="model.password" name="password"
+        #password="ngModel">
+      <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+        Password is required
+      </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-    </form>
+      <label for="confirmPassword">Password Confirmation</label>
+      <input type="password" class="form-control" id="confirmPassword" required maxlength=256 [(ngModel)]="model.confirmPassword"
+        name="confirmPassword" #confirmPassword="ngModel">
+      <div [hidden]="confirmPassword.valid || confirmPassword.pristine" class="alert alert-danger">
+        Password Confirmation is required
+      </div>
+      <div [hidden]="(confirmPassword.valid || confirmPassword.pristine) && password.value == confirmPassword.value" class="alert alert-danger">
+        Passwords are not the same
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid || password.value != confirmPassword.value">Submit</button>
+  </form>
 </div>
