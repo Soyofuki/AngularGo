@@ -17,7 +17,7 @@ import {
   MatListModule,
   MatMenuModule,
   MatButtonModule
-} from "../../../node_modules/@angular/material";
+} from "@angular/material";
 
 @NgModule({
   declarations: [LayoutComponent, TrackableComponent, FooterComponent],

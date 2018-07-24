@@ -35,6 +35,11 @@ export class LayoutComponent implements OnInit {
       name: "Help",
       routerLink: "help",
       subItems: null
+    },
+    {
+      name: "Account",
+      routerLink: "account",
+      subItems: null
     }
   ];
 

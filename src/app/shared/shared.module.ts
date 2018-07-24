@@ -38,8 +38,8 @@ import {
 
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { HelpComponent } from "./help/help.component";
-import { CdkTableModule } from "../../../node_modules/@angular/cdk/table";
-import { CdkTreeModule } from "../../../node_modules/@angular/cdk/tree";
+import { CdkTableModule } from "@angular/cdk/table";
+import { CdkTreeModule } from "@angular/cdk/tree";
 
 @NgModule({
   declarations: [PageNotFoundComponent, HelpComponent],
