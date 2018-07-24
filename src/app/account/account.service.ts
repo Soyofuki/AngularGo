@@ -22,7 +22,7 @@ export class AccountService {
     };
     return this.http
       .post(
-        "https://actionloggerwebapi.azurewebsites.net/api/Account/Register",
+        "https://*.azurewebsites.net/api/Account/Register",
         postedData,
         httpOptions
       )
