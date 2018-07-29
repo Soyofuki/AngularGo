@@ -27,8 +27,8 @@ export class LayoutComponent implements OnInit {
       name: "Sample",
       routerLink: "sample",
       subItems: [
-        { name: "Sample1", routerLink: "sample1", subItems: null },
-        { name: "Sample2", routerLink: "sample2", subItems: null }
+        { name: "Sample1", routerLink: "sample/sample1", subItems: null },
+        { name: "Sample2", routerLink: "sample/sample2", subItems: null }
       ]
     },
     {
@@ -39,7 +39,10 @@ export class LayoutComponent implements OnInit {
     {
       name: "Account",
       routerLink: "account",
-      subItems: null
+      subItems: [
+        { name: "Register", routerLink: "account/registration", subItems: null },
+        { name: "Login", routerLink: "account/login", subItems: null }
+      ]
     }
   ];
 

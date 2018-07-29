@@ -22,10 +22,10 @@ const baseUrl: string = environment.baseUrl;
 
 // Function for setting the default restangular configuration
 export function RestangularConfigFactory(RestangularProvider) {
-  RestangularProvider.setBaseUrl(baseUrl);
+  RestangularProvider.setBaseUrl(baseUrl + '/api');
   RestangularProvider.setDefaultHeaders({
     'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'Bearer ' + sessionStorage.getItem('adal.idtoken')});
+    'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).token.access_token});
 }
 
 @NgModule({

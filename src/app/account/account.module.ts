@@ -6,6 +6,7 @@ import { EmailConfirmationComponent } from "./email-confirmation/email-confirmat
 import { AccountRoutingModule } from "./account-routing.module";
 import { RegistrationComponent } from "./registration/registration.component";
 import { AccountService } from "./account.service";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   imports: [
@@ -15,7 +16,11 @@ import { AccountService } from "./account.service";
     AccountRoutingModule
   ],
   exports: [],
-  declarations: [EmailConfirmationComponent, RegistrationComponent],
+  declarations: [
+    EmailConfirmationComponent,
+    RegistrationComponent,
+    LoginComponent
+  ],
   providers: [AccountService]
 })
 export class AccountModule {}
