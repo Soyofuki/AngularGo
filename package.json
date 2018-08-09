@@ -18,6 +18,7 @@
     "@types/applicationinsights-js": "^1.0.5",
     "applicationinsights-js": "^1.0.18",
     "bootstrap": "^4.1.2",
+    "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.7",
     "error-stack-parser": "^2.0.2",
     "font-awesome": "^4.7.0",
@@ -27,6 +28,7 @@
     "popper.js": "^1.14.3",
     "powerbi-client": "^2.6.0",
     "rxjs": "^6.2.2",
+    "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
