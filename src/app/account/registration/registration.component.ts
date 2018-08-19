@@ -1,28 +1,25 @@
-import { Component, OnInit } from "@angular/core";
-import { AccountService } from "../account.service";
+import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../account.service';
 
 export class User {
   constructor(
     public email: string,
     public password: string,
     public confirmPassword: string
-  ) {  }
+  ) {}
 }
 
 @Component({
-  selector: "app-account-registration",
-  templateUrl: "./registration.component.html",
-  styleUrls: ["./registration.component.scss"]
+  selector: 'app-account-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-
   model = new User('', '', '');
 
   constructor(private accountService: AccountService) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   submitted = false;
 
@@ -32,5 +29,4 @@ export class RegistrationComponent implements OnInit {
       this.accountService.register(this.model.email, this.model.password);
     }
   }
-
 }

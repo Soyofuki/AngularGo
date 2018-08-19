@@ -1,9 +1,9 @@
-import { ErrorHandler, Injectable } from "@angular/core";
-import { HttpHeaders, HttpClient } from "@angular/common/http";
-import "stackframe/dist/stackframe.min";
-import * as ErrorStackParser from "error-stack-parser/dist/error-stack-parser.min";
-import { environment } from "../../../environments/environment";
-import { AppInsightsMonitoringService } from "./app-insights-monitoring.service";
+import { ErrorHandler, Injectable } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import 'stackframe/dist/stackframe.min';
+import * as ErrorStackParser from 'error-stack-parser/dist/error-stack-parser.min';
+import { environment } from '../../../environments/environment';
+import { AppInsightsMonitoringService } from './app-insights-monitoring.service';
 
 @Injectable()
 export class ExceptionLoggingService extends ErrorHandler {
@@ -24,32 +24,32 @@ export class ExceptionLoggingService extends ErrorHandler {
       const stackFrames = ErrorStackParser.parse(exception);
       const msg =
         errorMessage +
-        "\r\nURL: " +
+        '\r\nURL: ' +
         window.location.href +
-        "\r\ntack trace:" +
-        stackFrames.join("\r\n") +
-        "\r\n";
+        '\r\ntack trace:' +
+        stackFrames.join('\r\n') +
+        '\r\n';
 
       // Send custom events to app insight
       this.appInsightsMonitoringService.logException(exception);
 
       const httpOptions = {
         headers: new HttpHeaders({
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         })
       };
       this.http
-        .post(baseUrl + "/Exception", JSON.parse(msg), httpOptions)
+        .post(baseUrl + '/Exception', JSON.parse(msg), httpOptions)
         .subscribe(
           () => {
-            console.log("Error Logged:\r\n" + msg);
+            console.log('Error Logged:\r\n' + msg);
           },
           err => {
             console.error(err);
           }
         );
     } catch (loggingError) {
-      console.warn("Error server-side logging failed");
+      console.warn('Error server-side logging failed');
       console.log(loggingError);
     }
   }

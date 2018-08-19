@@ -25,13 +25,14 @@ export function RestangularConfigFactory(RestangularProvider) {
   RestangularProvider.setBaseUrl(baseUrl + '/api');
   RestangularProvider.setDefaultHeaders({
     'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).token.access_token});
+    Authorization:
+      'Bearer ' +
+      JSON.parse(localStorage.getItem('currentUser')).token.access_token
+  });
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -43,9 +44,7 @@ export function RestangularConfigFactory(RestangularProvider) {
     CoreModule,
     HomeModule
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
-

@@ -1,27 +1,21 @@
-import { Component, OnInit } from "@angular/core";
-import { AccountService } from "../account.service";
+import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../account.service';
 
 export class LoginUser {
-  constructor(
-    public email: string,
-    public password: string
-  ) {  }
+  constructor(public email: string, public password: string) {}
 }
 
 @Component({
-  selector: "app-account-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"]
+  selector: 'app-account-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   model = new LoginUser('', '');
 
   constructor(private accountService: AccountService) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   submitted = false;
 
@@ -31,5 +25,4 @@ export class LoginComponent implements OnInit {
       this.accountService.login(this.model.email, this.model.password);
     }
   }
-
 }

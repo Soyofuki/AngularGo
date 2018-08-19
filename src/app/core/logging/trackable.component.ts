@@ -1,8 +1,8 @@
-import { Component, ReflectiveInjector } from "@angular/core";
-import { AppInsightsMonitoringService } from "./app-insights-monitoring.service";
+import { Component, ReflectiveInjector } from '@angular/core';
+import { AppInsightsMonitoringService } from './app-insights-monitoring.service';
 
 @Component({
-  template: ""
+  template: ''
 })
 export class TrackableComponent {
   private appInsightsMonitoringService: AppInsightsMonitoringService;

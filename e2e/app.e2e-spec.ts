@@ -39,7 +39,7 @@ describe('Angular Template App', () => {
     productFormLink.click();
     browser.sleep(1000);
     // Check URL
-    expect(browser.getCurrentUrl()).toEqual('https://127.0.0.1:8007/sample/product_form');
+    expect(browser.getCurrentUrl()).toEqual('https://127.0.0.1:8009/sample/product_form');
     });
 
 });

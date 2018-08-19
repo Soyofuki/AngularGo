@@ -13,7 +13,7 @@ exports.config = {
   },
   directConnect: true,
   useAllAngular2AppRoots: true,
-  baseUrl: 'https://127.0.0.1:8007/',
+  baseUrl: 'https://127.0.0.1:8009/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,

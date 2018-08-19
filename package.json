@@ -55,7 +55,7 @@
     "protractor": "^5.4.0",
     "ts-node": "^7.0.0",
     "tslint": "^5.11.0",
-    "typescript": "^2.7.2"
+    "typescript": "~2.7.2"
   },
   "scripts": {
     "ng": "ng",
@@ -64,7 +64,7 @@
     "build": "ng build",
     "buildProd": "ng build --prod",
     "lint": "lint",
-    "e2e": "ng e2e --port 8007 --ssl",
+    "e2e": "ng e2e --port 8009 --ssl",
     "preprotractor": "webdriver-manager update"
   }
 }

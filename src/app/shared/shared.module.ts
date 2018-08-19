@@ -1,5 +1,5 @@
-﻿import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+﻿import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -34,12 +34,12 @@ import {
   MatTabsModule,
   MatTooltipModule,
   MatTreeModule
-} from "@angular/material";
+} from '@angular/material';
 
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { HelpComponent } from "./help/help.component";
-import { CdkTableModule } from "@angular/cdk/table";
-import { CdkTreeModule } from "@angular/cdk/tree";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HelpComponent } from './help/help.component';
+import { CdkTableModule } from '@angular/cdk/table';
+import { CdkTreeModule } from '@angular/cdk/tree';
 
 @NgModule({
   declarations: [PageNotFoundComponent, HelpComponent],

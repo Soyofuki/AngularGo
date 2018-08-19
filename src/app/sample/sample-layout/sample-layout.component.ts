@@ -1,13 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: "app-sample-layout",
-  templateUrl: "./sample-layout.component.html",
-  styleUrls: ["./sample-layout.component.scss"]
+  selector: 'app-sample-layout',
+  templateUrl: './sample-layout.component.html',
+  styleUrls: ['./sample-layout.component.scss']
 })
 export class SampleLayoutComponent implements OnInit {
-
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
