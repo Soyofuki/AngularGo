@@ -25,13 +25,13 @@
 
     <mat-sidenav-content>
       <mat-toolbar color="primary" class="example-toolbar">
-        <button mat-icon-button (click)="snav.toggle()">
+        <button mat-icon-button aria-label='Menu' (click)="snav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
         <span>Title</span>
         <span class="example-spacer"></span>
         <span>
-          <button mat-icon-button [matMenuTriggerFor]="menu">
+          <button mat-icon-button aria-label='More' [matMenuTriggerFor]="menu">
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
