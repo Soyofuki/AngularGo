@@ -16,7 +16,7 @@
     "@angular/router": "^6.0.9",
     "@ng-bootstrap/ng-bootstrap": "^2.2.0",
     "@types/applicationinsights-js": "^1.0.5",
-    "applicationinsights-js": "^1.0.18",
+    "applicationinsights-js": "^1.0.19-beta.1",
     "bootstrap": "^4.1.2",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.7",
