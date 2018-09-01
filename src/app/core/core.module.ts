@@ -6,7 +6,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExceptionLoggingService } from './logging/exception-logging.service';
 import { LayoutComponent } from './layout/layout.component';
 import { AppInsightsMonitoringService } from './logging/app-insights-monitoring.service';
-import { TrackableComponent } from './logging/trackable.component';
 import { MenuService } from './menu.service';
 import { FooterComponent } from './footer/footer.component';
 import { throwIfAlreadyLoaded } from './module-import-guard';
@@ -20,7 +19,7 @@ import {
 } from '@angular/material';
 
 @NgModule({
-  declarations: [LayoutComponent, TrackableComponent, FooterComponent],
+  declarations: [LayoutComponent, FooterComponent],
   imports: [
     CommonModule,
     RouterModule,
