@@ -22,7 +22,7 @@
     "error-stack-parser": "^2.0.2",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "ngx-restangular": "^3.0.0",
     "popper.js": "^1.14.3",
     "powerbi-client": "^2.6.3",
