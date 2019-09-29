@@ -39,7 +39,7 @@ export function RestangularConfigFactory(RestangularProvider) {
     ReactiveFormsModule,
     HttpClientModule,
     RestangularModule.forRoot(RestangularConfigFactory),
-    NgbModule.forRoot(),
+    NgbModule,
     AppRoutingModule,
     CoreModule,
     HomeModule
