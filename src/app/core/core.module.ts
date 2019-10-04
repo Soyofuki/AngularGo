@@ -17,6 +17,8 @@ import {
   MatMenuModule,
   MatButtonModule
 } from '@angular/material';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard';
 
 @NgModule({
   declarations: [LayoutComponent, FooterComponent],
@@ -35,7 +37,9 @@ import {
   providers: [
     { provide: ErrorHandler, useClass: ExceptionLoggingService },
     AppInsightsMonitoringService,
-    MenuService
+    MenuService,
+    AuthGuard,
+    AuthService
   ]
 })
 export class CoreModule {

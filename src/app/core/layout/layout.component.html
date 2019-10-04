@@ -11,10 +11,10 @@
       </mat-toolbar>
       <mat-nav-list [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
         <ng-container *ngFor="let item of items">
-          <a mat-list-item routerLink={{item.routerLink}}>{{item.name}}</a>
+          <a mat-list-item (click)="navigate(item.name, item.routerLink, snav)">{{item.name}}</a>
           <mat-list>
             <div *ngFor="let subItem of item.subItems">
-              <a mat-list-item routerLink={{subItem.routerLink}} style="padding-left:30px;">{{subItem.name}}</a>
+              <a mat-list-item (click)="navigate(subItem.name, subItem.routerLink, snav)" style="padding-left:30px;">{{subItem.name}}</a>
             </div>
           </mat-list>
         </ng-container>
