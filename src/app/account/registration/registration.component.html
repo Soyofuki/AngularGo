@@ -26,6 +26,6 @@
     </div>
 
 
-    <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid || password.value != confirmPassword.value">Submit</button>
+    <button mat-raised-button color="primary" [disabled]="!userForm.form.valid || password.value != confirmPassword.value">Submit</button>
   </form>
 </div>
