@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/cordova-project/node_modules
 
 # dependencies
 /node_modules
