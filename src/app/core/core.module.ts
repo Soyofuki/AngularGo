@@ -1,4 +1,4 @@
-import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
+import { NgModule, Optional, SkipSelf, ErrorHandler, APP_INITIALIZER } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -19,7 +19,12 @@ import {
 } from '@angular/material';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard';
+import { TranslateService } from './translate.service';
 
+export function setupTranslateFactory(
+  service: TranslateService): Function {
+  return () => service.use(localStorage.getItem('locale'));
+}
 @NgModule({
   declarations: [LayoutComponent, FooterComponent],
   imports: [
@@ -39,7 +44,14 @@ import { AuthGuard } from './auth-guard';
     AppInsightsMonitoringService,
     MenuService,
     AuthGuard,
-    AuthService
+    AuthService,
+    TranslateService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: setupTranslateFactory,
+      deps: [TranslateService],
+      multi: true
+    }
   ]
 })
 export class CoreModule {

@@ -1,5 +1,5 @@
 <div>
-  Welcome to Angular Go!
+  {{ 'WELCOME_ANGULAR_GO' | translate }}
 </div>
 <mat-grid-list cols="4" rowHeight="100px">
   <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">

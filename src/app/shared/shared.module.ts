@@ -40,9 +40,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HelpComponent } from './help/help.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
+import { TranslatePipe } from './translate/translate.pipe';
 
 @NgModule({
-  declarations: [PageNotFoundComponent, HelpComponent],
+  declarations: [PageNotFoundComponent, HelpComponent, TranslatePipe],
   imports: [CommonModule],
   exports: [
     CommonModule,
@@ -82,7 +83,8 @@ import { CdkTreeModule } from '@angular/cdk/tree';
     MatTableModule,
     MatTabsModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    TranslatePipe
   ]
 })
 export class SharedModule {}

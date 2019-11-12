@@ -3,6 +3,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material';
 import { Router } from '@angular/router';
 import { MenuService } from '../menu.service';
+import { TranslateService } from '../translate.service';
 
 export interface NavItem {
   name: string;
@@ -24,9 +25,12 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,
-    private menuService: MenuService
-    , private router: Router) {
+  constructor(
+    changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
+    private menuService: MenuService,
+    private router: Router,
+    private translate: TranslateService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -45,6 +49,23 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this.router.navigate([routeLink]);
     if (this.mobileQuery.matches) {
       sidenav.toggle();
+    }
+  }
+
+  setLanguage() {
+    switch (localStorage.getItem('locale')) {
+      case 'en':
+        this.translate.use('ja');
+        break;
+      case 'ja':
+        this.translate.use('zh-Hans');
+        break;
+      case 'zh-Hans':
+        this.translate.use('en');
+        break;
+      default:
+        this.translate.use('en');
+        break;
     }
   }
 }
