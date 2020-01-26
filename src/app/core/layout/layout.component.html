@@ -2,58 +2,60 @@
   <span class="k-icon k-i-loading"></span>
 </div>
 
-<div class="mat-app-background basic-container" class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+<mat-toolbar color="primary" class="toolbar">
+  <h1 class="example-app-name" [class.example-is-mobile]="mobileQuery.matches" [class.hide]="!snav.opened">Action Go</h1>
+  <button mat-icon-button aria-label='Menu' (click)="snav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span [class.hide]="mobileQuery.matches && snav.opened">{{title}}</span>
+  <span class="example-spacer"></span>
+  <span>
+    <button mat-icon-button aria-label='More' [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voicemail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+      <button mat-menu-item (click)="setLanguage()">
+        <mat-icon>settings_applications</mat-icon>
+        <span>Setting</span>
+      </button>
+    </mat-menu>
+  </span>
+</mat-toolbar>
 
-  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="0">
-      <mat-toolbar color="primary" class="example-toolbar">
-        <h1 class="example-app-name">Angular Go</h1>
-      </mat-toolbar>
-      <mat-nav-list [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+<div class="basic-container" class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="true" [opened]="!mobileQuery.matches"
+      fixedTopGap="0">
+      <mat-nav-list class="nav-list" [class.example-is-mobile]="mobileQuery.matches">
         <ng-container *ngFor="let item of items">
-          <a mat-list-item (click)="navigate(item.name, item.routerLink, snav)">{{item.name}}</a>
+          <a mat-list-item (click)="navigate(item.name, item.routerLink, snav)">
+            <mat-icon class="sidenav-menu-icon">{{ item.icon }}</mat-icon>{{ item.name }}</a>
           <mat-list>
             <div *ngFor="let subItem of item.subItems">
-              <a mat-list-item (click)="navigate(subItem.name, subItem.routerLink, snav)" style="padding-left:30px;">{{subItem.name}}</a>
+              <a mat-list-item (click)="navigate(subItem.name, subItem.routerLink, snav)" class="sub-mat-list-item" >
+                <mat-icon class="sidenav-menu-icon">{{ subItem.icon }}</mat-icon>{{ subItem.name }}
+              </a>
             </div>
           </mat-list>
         </ng-container>
       </mat-nav-list>
-
-
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <mat-toolbar color="primary" class="example-toolbar">
-        <button mat-icon-button aria-label='Menu' (click)="snav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span>{{title}}</span>
-        <span class="example-spacer"></span>
-        <span>
-          <button mat-icon-button aria-label='More' [matMenuTriggerFor]="menu">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>dialpad</mat-icon>
-              <span>Redial</span>
-            </button>
-            <button mat-menu-item disabled>
-              <mat-icon>voicemail</mat-icon>
-              <span>Check voicemail</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>notifications_off</mat-icon>
-              <span>Disable alerts</span>
-            </button>
-            <button mat-menu-item (click)="setLanguage()">
-              <mat-icon>settings_applications</mat-icon>
-              <span>Setting</span>
-            </button>
-          </mat-menu>
-        </span>
-      </mat-toolbar>
+
       <div class="rounter-outlet">
         <router-outlet>
         </router-outlet>

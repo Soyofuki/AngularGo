@@ -16,3 +16,23 @@
 .app__spacer {
   flex: 1 1 auto;
 }
+
+.mat-expansion-panel {
+  background: #4c4c4c;
+}
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+  background: #4c4c4c;
+}
+
+.mat-table {
+  background: #4c4c4c;
+}
+
+button:focus {
+  outline: auto 5px transparent !important;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  padding: 10px !important;
+}

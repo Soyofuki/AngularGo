@@ -9,6 +9,7 @@ export interface NavItem {
   name: string;
   routerLink: string;
   subItems: NavItem[];
+  icon: string;
 }
 
 @Component({
