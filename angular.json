@@ -17,10 +17,17 @@
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
+              "src/.well-known/microsoft-identity-association.json",
+              "src/assets/images/google-logo.png",
+              "src/assets/images/microsoft-logo.svg",
               "src/assets",
-              "src/favicon.ico",
               "src/web.config",
-              { "glob": "*.json", "input": "./i18n", "output": "./assets/i18n/" }
+              "src/pwabuilder-sw.js",
+              "src/platform.js",
+              "src/assets/manifest.webmanifest",
+              "src/images/Square44x44Logo.png",
+              "src/images/Square150x150Logo.png",
+              "src/images/StoreLogo.png"
             ],
             "styles": [
               "node_modules/font-awesome/css/font-awesome.min.css",

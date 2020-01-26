@@ -6,6 +6,7 @@
 export const environment = {
   production: false,
   baseUrl: 'https://localhost:44335',
+  webBaseUrl: 'https://localhost:8007',
   appInsights: {
     instrumentationKey: ''
   }

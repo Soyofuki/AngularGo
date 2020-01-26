@@ -4,19 +4,50 @@
 <head>
   <meta name="Description" content="Angular Go">
   <meta name="theme-color" content="#c2185b">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Action Go">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>Angular Go</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" sizes="192x192" href="/assets/images/icons/icon-192x192.png">
+  <link rel="apple-touch-icon" href="/assets/images/icons/icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icons/icon-96x96.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/icons/icon-128x128.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icons/icon-152x152.png">
+  <meta name="msapplication-square44x44logo" content="/images/Square44x44Logo.png">
+  <meta name="msapplication-square150x150logo" content="/images/Square150x150Logo.png">
+  <meta name="msapplication-StoreLogo" content="/images/StoreLogo.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="manifest" href="/assets/manifest.webmanifest">
+  <script src="https://apis.google.com/js/api.js"></script>
 </head>
 
 <body>
   <app-root>
     <span class="k-icon k-i-loading"></span>
   </app-root>
+  <script>
+    if ("serviceWorker" in navigator) {
+      if (navigator.serviceWorker.controller) {
+        console.log("[PWA Builder] active service worker found, no need to register");
+      } else {
+        // Register the service worker
+        navigator.serviceWorker
+          .register("pwabuilder-sw.js", {
+            scope: "./"
+          })
+          .then(function (reg) {
+            console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+          });
+      }
+    }
+
+  </script>
 </body>
 
 </html>
