@@ -1,12 +1,12 @@
 {
-  "name": "ActionGo",
-  "short_name": "ActionGo",
+  "name": "AngularGo",
+  "short_name": "AngularGo",
   "theme_color": "#c2185b",
   "background_color": "#303030",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "description": "Action Go, an Angular template.",
+  "description": "Angular Go, an Angular template.",
   "orientation": "portrait",
   "icons": [
     {
