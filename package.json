@@ -61,8 +61,12 @@
     "tslint-angular": "^3.0.2",
     "typescript": "~3.5.0"
   },
+  "resolutions": {
+    "@babel/preset-env": "^7.8.7"
+  },
   "scripts": {
     "ng": "ng",
+    "preinstall": "npx npm-force-resolutions",
     "start": "ng serve --ssl --aot",
     "test": "test",
     "build": "ng build",
