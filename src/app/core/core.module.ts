@@ -20,6 +20,7 @@ import {
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard';
 import { TranslateService } from './translate.service';
+import { SharedModule } from '../shared/shared.module';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -36,7 +37,8 @@ export function setupTranslateFactory(
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    SharedModule
   ],
   exports: [LayoutComponent],
   providers: [
