@@ -11,6 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "cordova-project/www",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -32,14 +33,20 @@
             "styles": [
               "node_modules/font-awesome/css/font-awesome.min.css",
               {
-                "input": "src/styles.scss",
-                "lazy": true
+                "inject": false,
+                "input": "src/styles.scss"
               }
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -49,10 +56,12 @@
               "extractLicenses": true,
               "vendorChunk": true,
               "buildOptimizer": true,
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }]
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             }
           }
         },
@@ -91,7 +100,11 @@
               "src/assets",
               "src/favicon.ico",
               "src/web.config",
-              { "glob": "*.json", "input": "./i18n", "output": "./assets/i18n/" }
+              {
+                "glob": "*.json",
+                "input": "./i18n",
+                "output": "./assets/i18n/"
+              }
             ]
           }
         },
@@ -139,10 +152,13 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+  },
+  "cli": {
+    "analytics": "7a17e690-360e-4cf4-9346-54115cde13b8"
   }
 }
