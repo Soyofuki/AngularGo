@@ -68,6 +68,7 @@
   "scripts": {
     "ng": "ng",
     "preinstall": "npx npm-force-resolutions",
+    "postinstall": "ngcc",
     "start": "ng serve --ssl --aot",
     "test": "test",
     "build": "ng build",
