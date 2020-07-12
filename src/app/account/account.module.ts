@@ -28,22 +28,35 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     SharedModule,
     AccountRoutingModule,
     MsalModule.forRoot({
-      clientID: '',
-      authority: 'https://login.microsoftonline.com/common/',
-      validateAuthority: true,
-      redirectUri: webBaseUrl + '/account/login',
-      cacheLocation: 'localStorage',
-      storeAuthStateInCookie: isIE, // set to true for IE 11
-      postLogoutRedirectUri: webBaseUrl + '/account/login',
-      navigateToLoginRequestUrl: true,
-      popUp: !isIE,
-      consentScopes: null,
-      unprotectedResources: ['https://www.microsoft.com/en-us/'],
-      protectedResourceMap: protectedResourceMap,
-      logger: loggerCallback,
-      correlationId: '',
-      piiLoggingEnabled: true
-    }
+      auth: {
+        clientId: '',
+        authority: 'https://login.microsoftonline.com/common/',
+        validateAuthority: true,
+        redirectUri: webBaseUrl + '/account/login',
+        postLogoutRedirectUri: webBaseUrl + '/account/login',
+        navigateToLoginRequestUrl: true
+      },
+      cache: {
+        cacheLocation: 'localStorage',
+        storeAuthStateInCookie: isIE, // set to true for IE 11
+      },
+      framework: {
+          isAngular: true
+      }
+    },
+      {
+        popUp: !isIE,
+        consentScopes: [
+          'user.read',
+          'openid',
+          'profile',
+        ],
+        unprotectedResources: [],
+        protectedResourceMap: [
+          [webBaseUrl, ['user.read']]
+        ],
+        extraQueryParameters: {}
+      }
     )
   ],
   exports: [],
