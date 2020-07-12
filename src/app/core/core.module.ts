@@ -9,14 +9,12 @@ import { AppInsightsMonitoringService } from './logging/app-insights-monitoring.
 import { MenuService } from './menu.service';
 import { FooterComponent } from './footer/footer.component';
 import { throwIfAlreadyLoaded } from './module-import-guard';
-import {
-  MatSidenavModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatListModule,
-  MatMenuModule,
-  MatButtonModule
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard';
 import { TranslateService } from './translate.service';

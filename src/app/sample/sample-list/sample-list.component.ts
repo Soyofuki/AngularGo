@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SampleService } from '../sample.service';
-import { MatTableDataSource, MatPaginator, MatSort, MatSnackBar, MatSpinner } from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSpinner } from '@angular/material/progress-spinner';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { SampleDto } from '../../shared/models/sampleDto';
