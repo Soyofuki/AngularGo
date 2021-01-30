@@ -33,7 +33,7 @@
             "styles": [
               "node_modules/font-awesome/css/font-awesome.min.css",
               {
-                "inject": false,
+                "inject": true,
                 "input": "src/styles.scss"
               }
             ],
@@ -50,7 +50,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
