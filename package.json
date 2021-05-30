@@ -11,7 +11,7 @@
     "@angular/forms": "^12.0.2",
     "@angular/http": "^7.2.16",
     "@angular/localize": "^12.0.2",
-    "@angular/material": "^11.2.13",
+    "@angular/material": "^12.0.2",
     "@angular/platform-browser": "^12.0.2",
     "@angular/platform-browser-dynamic": "^12.0.2",
     "@angular/router": "^12.0.2",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^12.0.2",
-    "@angular/cdk": "^11.2.13",
+    "@angular/cdk": "^12.0.2",
     "@angular/cli": "^12.0.2",
     "@angular/compiler": "^12.0.2",
     "@angular/compiler-cli": "^12.0.2",
