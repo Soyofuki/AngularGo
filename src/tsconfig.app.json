@@ -5,6 +5,9 @@
     "baseUrl": "./",
     "types": ["gapi", "gapi.auth2"]
   },
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  },
   "files": [
     "main.ts",
     "polyfills.ts"
