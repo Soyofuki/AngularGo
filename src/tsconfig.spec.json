@@ -10,7 +10,7 @@
     ]
   },
   "angularCompilerOptions": {
-    "strictTemplates": true
+    "strictTemplates": false
   },
   "files": [
     "test.ts",
