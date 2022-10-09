@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "module": "es2020",
+    "module": "esnext",
     "types": ["gapi", "gapi.auth2"],
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -9,12 +9,12 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "noImplicitAny": false, // to be enabled later
-    "target": "es6",
+    "target": "esnext",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2018",
+      "esnext",
       "dom"
     ]
   }

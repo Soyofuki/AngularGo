@@ -17,11 +17,7 @@ import { SampleDto } from '../../shared/models/sampleDto';
 })
 export class SampleListComponent implements OnInit {
   loading = 0;
-  spinner = this.overlay.create({
-    hasBackdrop: true,
-    positionStrategy: this.overlay
-      .position().global().centerHorizontally().centerVertically()
-  });
+  spinner: any;
 
   displayedColumns: string[] = ['displayOrder', 'sampleName', 'sampleDescription'];
   sampleList: MatTableDataSource<SampleDto>;
@@ -35,6 +31,11 @@ export class SampleListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.spinner = this.overlay.create({
+      hasBackdrop: true,
+      positionStrategy: this.overlay
+        .position().global().centerHorizontally().centerVertically()
+    });
     this.sampleList.paginator = this.paginator;
     this.sampleList.sort = this.sort;
     this.refresh();
