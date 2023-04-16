@@ -16,6 +16,11 @@ For Windows,  install build tools.
 ```
 npm install --global --production windows-build-tools
 ```
+If Python 2 is not installed, install the latest version and set NPM config, adding "python=C:\Python27\python.exe" in a new line.
+
+```
+npm config edit
+```
 
 Install packages.
 
