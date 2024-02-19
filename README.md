@@ -34,5 +34,5 @@ ng serve -o --ssl
 Build and distribute to /dist folder.
 
 ```
-ng build --prod --aot
+ng build --aot
 ```
