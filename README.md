@@ -3,19 +3,14 @@ An Angular SPA website with samples and out of box common functions for easy lev
 
 # Quick Start
 
-Install Node.js and NPM. Use Node version 17.9.1 at max.
+Install Node.js and NPM. Use Node version 16.20.2 at max.
 
 Install Angular CLI.
 
 ```
-npm install -g @angular/cli
+npm install -g @angular/cli@15
 ```
 
-For Windows,  install build tools.
-
-```
-npm install --global --production windows-build-tools
-```
 If Python 2 is not installed, install the latest version and set NPM config, adding "python=C:\Python27\python.exe" in a new line.
 
 ```
