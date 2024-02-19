@@ -11,7 +11,7 @@ Install Angular CLI.
 npm install -g @angular/cli@15
 ```
 
-If Python 2 is not installed, install the latest version and set NPM config, adding "python=C:\Python27\python.exe" in a new line.
+If Python 2 is not installed, install the latest version (2.7.18 now) and set NPM config with the below command, adding "python=C:\Python27\python.exe" in a new line and save.
 
 ```
 npm config edit
